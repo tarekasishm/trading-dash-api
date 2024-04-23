@@ -1,0 +1,7 @@
+Trade number;Instrument;Account;Strategy;Market pos.;Qty;Entry price;Exit price;Entry time;Exit time;Entry name;Exit name;Profit;Cum. net profit;Commission;MAE;MFE;ETD;Bars;
+1;MGC 06-24;APEX-148511-01!Apex!Apex;Basic;Short;1;2364,1;2349,4;15/04/2024 15:52:19;15/04/2024 16:07:23;Entry;Target2;145;145;1,52 $;21;147;2;0;
+2;MGC 06-24;APEX-148511-01!Apex!Apex;Basic;Short;1;2364,1;2349,4;15/04/2024 15:52:19;15/04/2024 16:07:23;Entry;Target1;145;291;1,52 $;21;147;2;0;
+3;MNQ 06-24;APEX-148511-01!Apex!Apex;High;Long;1;18271,75;18260,00;15/04/2024 9:40:21;15/04/2024 16:08:13;Entry;Stop2;-49;242;1,22 $;120;317;366;0;
+4;MNQ 06-24;APEX-148511-01!Apex!Apex;High;Long;1;18271,75;18260,00;15/04/2024 9:40:21;15/04/2024 16:08:13;Entry;Stop1;-49;192;1,22 $;120;317;366;0;
+5;MNQ 06-24;APEX-148511-01!Apex!Apex;High;Long;1;18271,75;18260,00;15/04/2024 9:40:21;15/04/2024 16:08:13;Entry;Stop4;-49;143;1,22 $;120;317;366;0;
+6;MNQ 06-24;APEX-148511-01!Apex!Apex;High;Long;1;18271,75;18260,00;15/04/2024 9:40:21;15/04/2024 16:08:13;Entry;Stop3;-49;93;1,22 $;120;317;366;0;

@@ -1,0 +1,18 @@
+[MNQ]
+tick_price = 0.50
+ticks_per_point = 4
+[MES]
+tick_price = 1.25
+ticks_per_point = 5
+[MGC]
+tick_price = 1.0
+ticks_per_point = 10
+[MCL]
+tick_price = 1.0
+ticks_per_point = 100
+[database]
+host = "192.168.1.40"
+port = 5432
+user = "timescaledb"
+password = "password"
+db_name = "postgres"
