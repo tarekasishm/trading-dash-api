@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel, field_validator
 
-from trades.config import Instrument
+from src.config import Instrument
 
 class TradeSchema(BaseModel):
     trade_number: str
@@ -62,7 +62,7 @@ class TradeSchema(BaseModel):
 
     @field_validator("commission", mode="before")
     def commission_validator(cls, commission: str) -> float:
-        return commission.replace(",", ".").removesuffix("$")
+        return float(commission.replace(",", ".").removesuffix("$"))
 
     @staticmethod
     def date_formatter(date_str: str) -> datetime:

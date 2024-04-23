@@ -1,7 +1,7 @@
-from trades.trade import Trade
-from trades.trade_schema import TradeSchema
-from trades.config import Instrument, Config
-from trades.trade_repository import TradeRepository
+from src.trade import Trade
+from src.trade_schema import TradeSchema
+from src.config import Instrument, Config
+from src.trade_repository import TradeRepository
 
 class SaveTradesUseCase:
     def __init__(self, trade_repository: TradeRepository, config: Config) -> None:

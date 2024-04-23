@@ -1,8 +1,9 @@
-import csv
+# type: ignore
+# PEP 695 generics are not yet supported 
 from io import StringIO
 from pydantic import BaseModel
 
-class CsvParser[T: BaseModel]:
+class CsvParser[T: BaseModel]: # type:ignore
     def __init__(self, base: type[T]):
         self._base = base
 

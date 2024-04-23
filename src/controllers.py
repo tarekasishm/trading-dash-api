@@ -3,13 +3,13 @@ from typing import Annotated
 from fastapi import APIRouter, File, Depends
 import psycopg2
 
-from trades.config import Config
-from trades.csv_parser import CsvParser
-from trades.trade import Trade
-from trades.trade_schema import TradeSchema
-from trades.save_trades_use_case import SaveTradesUseCase
-from trades.trade_repository import TradeRepository
-from trades.db import db_connection
+from src.config import Config
+from src.csv_parser import CsvParser # type: ignore
+from src.trade import Trade
+from src.trade_schema import TradeSchema
+from src.save_trades_use_case import SaveTradesUseCase
+from src.trade_repository import TradeRepository
+from src.db import db_connection
 
 router = APIRouter()
 

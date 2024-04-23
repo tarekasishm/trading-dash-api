@@ -2,8 +2,8 @@ from fastapi import FastAPI
 
 from contextlib import asynccontextmanager
 
-from trades.controllers import router
-from trades.db import migrate
+from src.controllers import router
+from src.db import migrate
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

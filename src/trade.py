@@ -3,8 +3,8 @@ from datetime import datetime
 from typing import Any
 from enum import Enum
 
-from trades.trade_schema import TradeSchema
-from trades.config import Instrument
+from src.trade_schema import TradeSchema
+from src.config import Instrument
 
 class MarketPosition(Enum):
     SHORT: str = "SHORT"
@@ -51,7 +51,7 @@ class Trade:
             trade_schema.entry,
             trade_schema.exit,
             instrument.ticks_per_point,
-            instrument.tick_price * instrument.ticks_per_point,
+            int(instrument.tick_price * instrument.ticks_per_point),
             trade_schema.commission,
         )
 

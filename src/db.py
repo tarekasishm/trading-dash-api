@@ -2,7 +2,7 @@ import psycopg2
 
 from typing import Generator
 
-from trades.config import Config
+from src.config import Config
 
 CREATE_TRADES_TABLE_QUERY = """
     CREATE TABLE IF NOT EXISTS trades (

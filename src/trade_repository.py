@@ -1,6 +1,6 @@
 import psycopg2
 
-from trades.trade import Trade
+from src.trade import Trade
 
 
 class TradeRepository:
