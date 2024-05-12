@@ -23,6 +23,27 @@ CREATE_TRADES_TABLE_QUERY = """
     );
 """
 CREATE_TRADE_HYPERTABLE = "SELECT create_hypertable('trades', by_range('time'));"
+CREATE_PROFIT_TABLE_QUERY = """
+    CREATE TABLE IF NOT EXISTS net_profit(
+        time                TIMESTAMPTZ NOT NULL,
+        ticker              VARCHAR(10),
+        account             VARCHAR(50),
+        profit_usd          FLOAT,
+        profit_points       FLOAT,
+        profit_ticks        FLOAT              
+    );
+"""
+CREATE_PROFIT_HYPERTABLE = "SELECT create_hypertable('net_profit', by_range('time'));"
+
+
+CREATE_TABLE_QUERIES = [
+    CREATE_PROFIT_TABLE_QUERY,
+    CREATE_TRADES_TABLE_QUERY,
+]
+HYPERTABLE_QUERIES = [
+    CREATE_TRADE_HYPERTABLE,
+    CREATE_PROFIT_HYPERTABLE,
+]
 
 def migrate() -> None:
     config = Config()
@@ -33,8 +54,8 @@ def migrate() -> None:
     print(CONNECTION)
     with psycopg2.connect(CONNECTION) as connection:
         cursor = connection.cursor()
-        cursor.execute(CREATE_TRADES_TABLE_QUERY)
-        cursor.execute(CREATE_TRADES_TABLE_QUERY)
+        [cursor.execute(query) for query in CREATE_TABLE_QUERIES]
+        [cursor.execute(hypertable) for hypertable in HYPERTABLE_QUERIES]
         connection.commit()
 
 def db_connection() -> Generator[psycopg2.extensions.connection, None, None]:
